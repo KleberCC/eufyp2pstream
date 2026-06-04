@@ -704,7 +704,8 @@ class Connector:
                     elif isinstance(dev, dict) and "serialNumber" in dev:
                         if dev.get("type", 0) != "station": 
                             camera_serials.append(dev["serialNumber"])
-                            
+
+                camera_serials.sort()
                 camera_serials = camera_serials[:5]
                 
                 for idx, serial in enumerate(camera_serials):
